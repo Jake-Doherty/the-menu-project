@@ -46,11 +46,3 @@ footer {
     height: 10vh;
     background: var(--footer-color);
 }
-
-#announcement {
-    width: fit-content;
-    position: relative;
-    margin: auto;
-    top: 40%;
-    text-align: center;
-}
