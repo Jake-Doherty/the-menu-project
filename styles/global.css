@@ -18,8 +18,15 @@
         rgb(143, 145, 106)
     );
     --border-color: rgb(250, 240, 226);
+    --nav-border-color: rgb(68, 47, 56);
     --nav-background: linear-gradient(
         90deg,
+        rgb(248, 238, 217),
+        rgb(231, 221, 201),
+        rgb(163, 157, 143)
+    );
+    --nav-link-hover-background: linear-gradient(
+        -90deg,
         rgb(248, 238, 217),
         rgb(231, 221, 201),
         rgb(163, 157, 143)
@@ -29,7 +36,8 @@
         rgb(68, 47, 56),
         rgb(138, 103, 118)
     );
-    --text-color: #f8f5ed;
+    --primary-text-color: #f8f5ed;
+    --secondary-text-color: #302f2d;
     --primary-font: sans-serif;
 }
 
@@ -38,7 +46,7 @@
     margin: 0;
     padding: 0;
     font-family: var(--primary-font);
-    color: var(--text-color);
+    /* color: var(--primary-text-color); */
 }
 
 body {
@@ -71,20 +79,33 @@ header {
 }
 
 main {
+    display: grid;
     height: 84vh;
     position: relative;
 }
 
+footer {
+    height: 8vh;
+    position: relative;
+    background: var(--footer-color);
+    box-shadow: 0px -3px 5px 0.5px rgba(0, 0, 0, 0.212);
+    border-top: 0.5px solid var(--border-color);
+    z-index: 5;
+}
+
+/*              NAVIGATION MENU              */
 aside {
     display: flex;
     flex-direction: column;
     height: 100%;
-    position: relative;
+    width: 200px;
+    position: absolute;
     text-align: center;
     background: var(--nav-background);
     border-right: 0.5px solid var(--border-color);
     box-shadow: 3px 0px 5px 0.5px rgba(0, 0, 0, 0.377);
     overflow: hidden;
+    z-index: 2;
 }
 
 #menu-btn-bar {
@@ -113,7 +134,7 @@ aside {
 }
 
 .toggle-menu-closed {
-    transform: translateX(165px) rotate(-90deg);
+    transform: translateX(162px) rotate(-90deg);
     transition: all 250ms ease-in;
 }
 
@@ -122,8 +143,17 @@ aside {
 }
 
 .toggle-nav-menu-closed {
-    transform: translateX(-165px);
+    height: 45px;
+    border-bottom: 1px solid var(--border-color);
+    box-shadow: 0px 0px 5px 1px black;
+    transform: translateX(-160px);
+    opacity: 50%;
     transition: all 250ms ease-in;
+}
+
+.toggle-nav-menu-closed:hover {
+    opacity: 100%;
+    transition: all 250ms ea;
 }
 
 nav {
@@ -158,14 +188,10 @@ nav > a {
 }
 
 nav > a:hover {
+    transform: scale(110%);
+    background: var(--nav-link-hover-background);
+    color: var(--nav-border-color);
+    border: 1px solid var(--nav-border-color);
     box-shadow: -1px 0 5px 0.5px rgb(68, 47, 56);
-}
-
-footer {
-    height: 8vh;
-    position: relative;
-    background: var(--footer-color);
-    box-shadow: 0px -3px 5px 0.5px rgba(0, 0, 0, 0.212);
-    border-top: 0.5px solid var(--border-color);
-    z-index: 5;
+    transition: all 100ms ease-in;
 }
