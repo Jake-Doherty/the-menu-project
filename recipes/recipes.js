@@ -31,6 +31,7 @@ recipeSearchForm.addEventListener("submit", async (e) => {
 
 // DISPLAY
 function displayRecipes() {
+    recipesList.innerHTML = "";
     for (const recipe of recipes.hits) {
         const recipeEl = renderRecipes(recipe);
         recipesList.append(recipeEl);

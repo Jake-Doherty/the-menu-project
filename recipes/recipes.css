@@ -1,8 +1,60 @@
 section {
-    margin: 20px auto;
+    position: absolute;
+    width: 93%;
+    height: 85%;
+    z-index: 1;
+}
+
+#recipe-search-form {
+    position: relative;
+    top: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
 }
 
 #recipes-list {
-    height: 50vh;
-    overflow: scroll;
+    display: grid;
+    grid-template: repeat(auto-fill, 200px) / repeat(auto-fill, 350px);
+    gap: 10px;
+    position: absolute;
+    margin: 2% 0 0 2%;
+    width: 105.5%;
+    height: 109%;
+    overflow: auto;
+    list-style: none;
+    justify-content: center;
+}
+
+#recipes-list > a {
+    text-decoration: none;
+    color: var(--secondary-text-color);
+}
+
+.recipe-item {
+    display: grid;
+    grid-template-columns: 250px 100px;
+    border: 1px solid var(--border-color);
+    height: 200px;
+    justify-items: center;
+    align-items: center;
+}
+
+.recipe-title {
+    font-weight: bold;
+    text-align: center;
+    text-decoration: underline;
+}
+
+.cook-time {
+    text-align: center;
+}
+
+.servings {
+    text-align: center;
+}
+
+.recipe-preview {
+    scale: 80%;
+    border-radius: 50%;
 }
