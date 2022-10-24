@@ -12,6 +12,7 @@
         <!-- js -->
         <script type="module" src="../app.js"></script>
         <script type="module" src="../nav.js"></script>
+        <script type="module" src="/recipes/recipes.js"></script>
 
         <!-- fonts -->
 
@@ -61,11 +62,13 @@
                 </nav>
             </aside>
             <section id="homepage-content">
-                <form>
+                <form id="recipe-search-form">
                     <input name="recipe-search" type="text" />
                     <button>+</button>
                 </form>
+                <ul id="recipes-list"></ul>
             </section>
+            <p id="error-display"></p>
         </main>
         <footer></footer>
     </body>
