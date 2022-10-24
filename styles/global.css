@@ -36,6 +36,7 @@ header {
     height: 10vh;
     background: var(--header-color);
     box-shadow: 3px 0px 3px 1px black;
+    filter: blur(5px);
 }
 
 main {
@@ -45,6 +46,7 @@ main {
 footer {
     height: 10vh;
     background: var(--footer-color);
+    filter: blur(5px);
 }
 
 #announcement {
