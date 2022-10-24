@@ -10,15 +10,56 @@
         <link rel="icon" type="image/x-icon" href="/assets/menu.png" />
 
         <!-- js -->
+        <script type="module" src="/app.js"></script>
+        <script type="module" src="/nav.js"></script>
 
         <!-- fonts -->
 
         <!-- css -->
         <link rel="stylesheet" href="/styles/global.css" />
+        <link rel="stylesheet" href="/styles/home.css" />
     </head>
     <body>
-        <header></header>
-        <main></main>
+        <header>
+            <img class="logo" src="assets/menu.png" alt="site-logo" />
+            <h1 class="site-title">The Recipe Project</h1>
+        </header>
+        <main>
+            <aside id="nav-menu" class="toggle-nav-menu-closed">
+                <div id="menu-btn-bar">
+                    <div id="menu-btn" class="toggle-menu-closed">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </div>
+                </div>
+                <nav>
+                    <a class="nav-menu-link link-closed-opacity" href="/"
+                        >Home</a
+                    >
+                    <a class="nav-menu-link link-closed-opacity" href="/"
+                        >Profile</a
+                    >
+                    <a class="nav-menu-link link-closed-opacity" href="/"
+                        >Discover Recipes</a
+                    >
+                    <a class="nav-menu-link link-closed-opacity" href="/"
+                        >Create Menu</a
+                    >
+                    <a class="nav-menu-link link-closed-opacity" href="/"
+                        >View Calendar</a
+                    >
+                    <a class="nav-menu-link link-closed-opacity" href="/"
+                        >Shopping List</a
+                    >
+                    <div></div>
+                    <a class="nav-menu-link link-closed-opacity" href="/"
+                        >Sign Out</a
+                    >
+                </nav>
+            </aside>
+            <section id="homepage-content"></section>
+        </main>
         <footer></footer>
     </body>
 </html>
