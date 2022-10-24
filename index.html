@@ -10,24 +10,123 @@
         <link rel="icon" type="image/x-icon" href="/assets/menu.png" />
 
         <!-- js -->
+        <script type="module" src="/app.js"></script>
+        <script type="module" src="/nav.js"></script>
 
         <!-- fonts -->
 
         <!-- css -->
         <link rel="stylesheet" href="/styles/global.css" />
+        <link rel="stylesheet" href="/styles/home.css" />
     </head>
     <body>
-        <header></header>
+        <header>
+            <img class="logo" src="assets/menu.png" alt="site-logo" />
+            <h1 class="site-title">The Recipe Project</h1>
+        </header>
         <main>
-            <div id="announcement">
-                <h1>Site Coming Soon!</h1>
-                <h3>
-                    Please check back as the site will have updates regularly
-                </h3>
-                <h5>
-                    for questions please email just.the.recipe.project@gmail.com
-                </h5>
-            </div>
+            <aside id="nav-menu" class="toggle-nav-menu-closed">
+                <div id="menu-btn-bar">
+                    <div id="menu-btn" class="toggle-menu-closed">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </div>
+                </div>
+                <nav>
+                    <a class="nav-menu-link link-closed-opacity" href="/"
+                        >Home</a
+                    >
+                    <a class="nav-menu-link link-closed-opacity" href="/"
+                        >Profile</a
+                    >
+                    <a
+                        class="nav-menu-link link-closed-opacity"
+                        href="/recipes/index.html"
+                        >Discover Recipes</a
+                    >
+                    <a class="nav-menu-link link-closed-opacity" href="/"
+                        >Create Menu</a
+                    >
+                    <a class="nav-menu-link link-closed-opacity" href="/"
+                        >View Calendar</a
+                    >
+                    <a class="nav-menu-link link-closed-opacity" href="/"
+                        >Shopping List</a
+                    >
+                    <div></div>
+                    <a class="nav-menu-link link-closed-opacity" href="/"
+                        >Sign Out</a
+                    >
+                </nav>
+            </aside>
+            <section id="homepage-content">
+                <div id="homepage-heros">
+                    <article id="featured-recipes">
+                        <h4 class="featured-recipe-header">Featured Recipes</h4>
+                        <ul id="featured-recipe-list">
+                            <li class="recipe-item">
+                                <p class="recipe-title">Recipe</p>
+                                <p class="recipe-time">30 min</p>
+                                <p class="recipe-servings">4 Servings</p>
+                                <img
+                                    class="recipe-preview-image"
+                                    src="assets/menu.png"
+                                    alt="recipe-image"
+                                />
+                            </li>
+                            <li class="recipe-item">
+                                <p class="recipe-title">Recipe</p>
+                                <p class="recipe-time">30 min</p>
+                                <p class="recipe-servings">4 Servings</p>
+                                <img
+                                    class="recipe-preview-image"
+                                    src="assets/menu.png"
+                                    alt="recipe-image"
+                                />
+                            </li>
+                            <li class="recipe-item">
+                                <p class="recipe-title">Recipe</p>
+                                <p class="recipe-time">30 min</p>
+                                <p class="recipe-servings">4 Servings</p>
+                                <img
+                                    class="recipe-preview-image"
+                                    src="assets/menu.png"
+                                    alt="recipe-image"
+                                />
+                            </li>
+                            <li class="recipe-item">
+                                <p class="recipe-title">Recipe</p>
+                                <p class="recipe-time">30 min</p>
+                                <p class="recipe-servings">4 Servings</p>
+                                <img
+                                    class="recipe-preview-image"
+                                    src="assets/menu.png"
+                                    alt="recipe-image"
+                                />
+                            </li>
+                            <li class="recipe-item">
+                                <p class="recipe-title">Recipe</p>
+                                <p class="recipe-time">30 min</p>
+                                <p class="recipe-servings">4 Servings</p>
+                                <img
+                                    class="recipe-preview-image"
+                                    src="assets/menu.png"
+                                    alt="recipe-image"
+                                />
+                            </li>
+                        </ul>
+                    </article>
+                    <article id="ingredients-of-the-week">
+                        Ingredients of the Week
+                    </article>
+                </div>
+                <div id="homepage-main-content">
+                    <article><h4>This Weeks Menu</h4></article>
+                    <article><h4>Top Contributors</h4></article>
+                    <article><h4>not sure</h4></article>
+                </div>
+            </section>
         </main>
         <footer></footer>
     </body>
