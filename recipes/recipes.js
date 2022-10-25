@@ -94,7 +94,7 @@ function displayMoreRecipes() {
     queryTotalCount.textContent = `displaying ${count} of ${recipes.count} results`;
     for (const recipe of recipes.hits) {
         const recipeEl = renderRecipes(recipe);
-        recipesList.append(recipeEl);
+        recipesList.prepend(recipeEl);
     }
 }
 
