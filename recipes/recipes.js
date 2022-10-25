@@ -20,6 +20,14 @@ let paging = {
     page: "1",
     nextPage_url: null,
 };
+let count = "";
+
+// async function resultCountFunc(response) {
+//     let resultCount = await response.hits.length;
+//     additionalCount += resultCount;
+
+//     return additionalCount;
+// }
 
 // EVENTS
 window.addEventListener("load", async () => {
@@ -28,6 +36,8 @@ window.addEventListener("load", async () => {
     };
 
     let response = await getRecipesOnPageLoad(recipe.dish_name);
+    count = response.hits.length;
+    console.log("count", count);
 
     recipes = response;
 
@@ -39,12 +49,15 @@ nextPage.addEventListener("click", async () => {
 
     console.log(recipes);
 
-    (paging.nextPage_url = response._links.next.href), paging.page++;
+    paging.nextPage_url = response._links.next.href;
+    paging.page++;
+    count += response.hits.length;
 
     recipes = response;
 
-    console.log(paging.page);
+    console.log("page", paging.page, "count 2", count);
     displayMoreRecipes();
+    console.log("result count console.log", recipes.hits.length);
 });
 
 recipeSearchForm.addEventListener("submit", async (e) => {
@@ -70,7 +83,7 @@ recipeSearchForm.addEventListener("submit", async (e) => {
 // DISPLAY
 function displayRecipes() {
     recipesList.innerHTML = "";
-    queryTotalCount.textContent = `Randomly displaying ${recipes.hits.length} of ${recipes.count} results`;
+    queryTotalCount.textContent = `displaying ${count} of ${recipes.count} results`;
     for (const recipe of recipes.hits) {
         const recipeEl = renderRecipes(recipe);
         recipesList.append(recipeEl);
@@ -78,7 +91,7 @@ function displayRecipes() {
 }
 
 function displayMoreRecipes() {
-    queryTotalCount.textContent = `Randomly displaying ${recipes.hits.length} of ${recipes.count} results`;
+    queryTotalCount.textContent = `displaying ${count} of ${recipes.count} results`;
     for (const recipe of recipes.hits) {
         const recipeEl = renderRecipes(recipe);
         recipesList.append(recipeEl);
