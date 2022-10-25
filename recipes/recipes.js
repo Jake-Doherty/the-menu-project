@@ -37,7 +37,6 @@ window.addEventListener("load", async () => {
 
     let response = await getRecipesOnPageLoad(recipe.dish_name);
     count = response.hits.length;
-    console.log("count", count);
 
     recipes = response;
 
@@ -47,17 +46,13 @@ window.addEventListener("load", async () => {
 nextPage.addEventListener("click", async () => {
     const response = await getMoreRecipes(recipes._links.next.href);
 
-    console.log(recipes);
-
     paging.nextPage_url = response._links.next.href;
     paging.page++;
     count += response.hits.length;
 
     recipes = response;
 
-    console.log("page", paging.page, "count 2", count);
     displayMoreRecipes();
-    console.log("result count console.log", recipes.hits.length);
 });
 
 recipeSearchForm.addEventListener("submit", async (e) => {
