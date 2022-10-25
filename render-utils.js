@@ -1,6 +1,7 @@
 export function renderRecipes(recipe) {
     const aPageLink = document.createElement("a");
     aPageLink.href = `${recipe.recipe.url}`;
+    aPageLink.target = "_blank";
 
     const li = document.createElement("li");
     li.classList.add("recipe-item");
@@ -25,9 +26,8 @@ export function renderRecipes(recipe) {
 
     const img = document.createElement("img");
     img.src = `${recipe.recipe.images.THUMBNAIL.url}`;
+    img.alt = `${recipe.recipe.label}`;
     img.classList.add("recipe-preview");
-
-    console.log("render function console log", recipe);
 
     recipeInfoDiv.append(pLabel, pTimeToCook, pServings);
 
