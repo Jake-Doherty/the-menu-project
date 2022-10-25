@@ -1,8 +1,5 @@
-body {
-    background: url("/assets/spaghetti-1932466.jpg");
-    background-position: center;
-    background-size: contain;
-}
+/* body {
+} */
 
 section {
     position: absolute;
@@ -25,11 +22,12 @@ section {
     display: flex;
     flex-direction: row;
     gap: 10px;
+    background: var(--card-color);
 }
 
 #recipe-search-form label {
     background: var(--label-color);
-    color: var(--primary-text-color);
+    color: var(--secondary-text-color);
     border-top: 1px solid var(--border-color);
     border-left: 1px solid var(--border-color);
 }
@@ -38,7 +36,7 @@ section {
     position: relative;
     left: 60px;
     width: fit-content;
-    background: var(--recipe-card-color);
+    background: var(--card-color);
     border: 1px solid var(--border-color);
 }
 
@@ -58,7 +56,7 @@ section {
 #recipes-list > a {
     text-decoration: none;
     color: var(--tertiary-text-color);
-    background: var(--recipe-card-color);
+    background: var(--card-color);
     border: 1px solid var(--border2-color);
 }
 

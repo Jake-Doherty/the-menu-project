@@ -1,53 +1,44 @@
 :root {
-    --background-color: linear-gradient(
+    --background-color: ;
+    --header-background-color: linear-gradient(
         0deg,
-        rgb(192, 184, 167),
-        rgb(231, 221, 201),
-        rgb(248, 238, 217)
+        rgb(184, 184, 184),
+        rgb(206, 208, 206),
+        rgb(226, 229, 226)
     );
-    --header-color: linear-gradient(
-        0deg,
-        rgb(139, 139, 103),
-        rgb(154, 155, 115),
-        rgb(171, 172, 127)
-    );
-    --footer-color: linear-gradient(
-        0deg,
-        rgb(106, 107, 78),
-        rgb(125, 126, 93),
-        rgb(143, 145, 106)
+    --footer-background-color: linear-gradient(
+        180deg,
+        rgb(184, 184, 184),
+        rgb(206, 208, 206),
+        rgb(226, 229, 226)
     );
     --label-color: linear-gradient(
         90deg,
-        rgba(158, 153, 145, 0.836),
-        rgba(250, 240, 226, 0.5),
-        rgba(250, 240, 226, 0.021)
+        rgb(184, 184, 184),
+        rgba(206, 208, 206, 0.548),
+        rgba(226, 229, 226, 0.205)
     );
-    --border-color: rgb(250, 240, 226);
-    --border2-color: rgba(250, 240, 226, 0.404);
-    --nav-border-color: rgb(68, 47, 56);
-    --nav-background: linear-gradient(
-        90deg,
-        rgb(248, 238, 217),
-        rgb(231, 221, 201),
-        rgb(163, 157, 143)
-    );
-    --nav-link-hover-background: linear-gradient(
-        -90deg,
-        rgb(248, 238, 217),
-        rgb(231, 221, 201),
-        rgb(163, 157, 143)
-    );
-    --nav-link-background: linear-gradient(
-        90deg,
-        rgb(68, 47, 56),
-        rgb(138, 103, 118)
-    );
-    --recipe-card-color: rgba(250, 240, 226, 0.5);
-    --hover-recipe-card-color: rgba(250, 240, 226, 0.75);
-    --primary-text-color: #f8f5ed;
-    --secondary-text-color: #302f2d;
-    --tertiary-text-color: #050505;
+    --border-color: #e6e8e6ff;
+    --border2-color: rgba(230, 232, 230, 0.63);
+    --nav-border-color: ;
+    --nav-background: #9fb8adff;
+    --nav-button-color: #738877ff;
+    --nav-link-hover-background: #475841ff;
+    --nav-link-hover-shadow: #434c40ff;
+    --nav-link-background: #b7c4beff;
+    --card-color: rgba(218, 220, 218, 0.548);
+    --hover-recipe-card-color: rgba(218, 220, 218, 0.925);
+    --primary-text-color: rgb(245, 245, 245);
+    --secondary-text-color: rgb(64, 64, 64);
+    --tertiary-text-color: rgb(0, 0, 0);
+
+    /* coolors color pallet */
+    --gainsboro: ;
+    --ash-gray: ;
+    --opal: ;
+    --xanadu: ;
+    --rifle-green: ;
+    --rifle-green-2: ;
     --primary-font: sans-serif;
 }
 
@@ -60,9 +51,13 @@
 }
 
 body {
+    display: grid;
+    grid-template-rows: 60px 1fr 60px;
     height: 100vh;
     width: 100vw;
-    background: var(--background-color);
+    background: url("/assets/spaghetti-1932466.jpg");
+    background-position: center;
+    background-size: cover;
     overflow: hidden;
 }
 
@@ -70,9 +65,10 @@ header {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    height: 8vh;
+    /* height: 8vh; */
+    width: 100vw;
     position: relative;
-    background: var(--header-color);
+    background: var(--header-background-color);
     box-shadow: 0px 3px 5px 0.5px rgba(0, 0, 0, 0.432);
     border-bottom: 0.5px solid var(--border-color);
     z-index: 5;
@@ -85,19 +81,20 @@ header {
 
 .site-title {
     margin: auto 20px;
+    text-align-last: right;
     text-shadow: 2px 3px 3px rgba(0, 0, 0, 0.418);
 }
 
 main {
     display: grid;
-    height: 84vh;
+    /* height: 84vh; */
     position: relative;
 }
 
 footer {
-    height: 8vh;
+    /* height: 8vh; */
     position: relative;
-    background: var(--footer-color);
+    background: var(--footer-background-color);
     box-shadow: 0px -3px 5px 0.5px rgba(0, 0, 0, 0.212);
     border-top: 0.5px solid var(--border-color);
     z-index: 5;
@@ -129,13 +126,19 @@ aside {
     cursor: pointer;
     position: relative;
     left: 5px;
+    border-radius: 50%;
+}
+
+#menu-btn:hover * {
+    background: var(--border-color);
+    transition: all 200ms ease-in;
 }
 
 #menu-btn > div {
     width: 25px;
     height: 5px;
     margin: 3px auto;
-    background-color: rgb(68, 47, 56);
+    background: var(--nav-button-color);
     border-radius: 5px;
 }
 
@@ -182,7 +185,8 @@ nav > a {
     padding: 10px 0;
     margin: 10px auto;
     text-decoration: none;
-    color: var(--text-color);
+    font-weight: bolder;
+    color: var(--secondary-text-color);
     background: var(--nav-link-background);
 }
 
@@ -200,9 +204,9 @@ nav > a {
 nav > a:hover {
     transform: scale(110%);
     background: var(--nav-link-hover-background);
-    color: var(--nav-border-color);
-    border: 1px solid var(--nav-border-color);
-    box-shadow: -1px 0 5px 0.5px rgb(68, 47, 56);
+    color: var(--primary-text-color);
+    border: 1px solid var(--border-color);
+    box-shadow: -1px 0 5px 0.5px var(--nav-link-hover-shadow);
     transition: all 100ms ease-in;
 }
 
