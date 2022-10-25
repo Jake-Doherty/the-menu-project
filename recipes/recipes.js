@@ -18,14 +18,20 @@ recipeSearchForm.addEventListener("submit", async (e) => {
 
     const recipe = {
         dish_name: formData.get("recipe-search"),
+        health_restrictions: formData.get("health-restrictions"),
     };
 
-    const response = await getRecipes(recipe.dish_name);
+    const response = await getRecipes(
+        recipe.dish_name,
+        recipe.health_restrictions
+    );
 
     recipes = response;
 
     console.log("search form console log", recipes);
+    console.log("search form console log2", recipe.health_restrictions);
 
+    displayError();
     displayRecipes();
 });
 
