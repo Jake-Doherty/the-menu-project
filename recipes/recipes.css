@@ -1,3 +1,9 @@
+body {
+    background: url("/assets/spaghetti-1932466.jpg");
+    background-position: center;
+    background-size: contain;
+}
+
 section {
     position: absolute;
     width: 93%;
@@ -5,22 +11,45 @@ section {
     z-index: 1;
 }
 
-#recipe-search-form {
+#page-nav-and-search {
     position: relative;
-    top: 20px;
+    top: 10px;
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+#recipe-search-form {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+#recipe-search-form label {
+    background: var(--label-color);
+    color: var(--primary-text-color);
+    border-top: 1px solid var(--border-color);
+    border-left: 1px solid var(--border-color);
+}
+
+#query-total-count {
+    position: relative;
+    left: 60px;
+    width: fit-content;
+    background: var(--recipe-card-color);
+    border: 1px solid var(--border-color);
 }
 
 #recipes-list {
     display: grid;
-    grid-template: repeat(auto-fill, 200px) / repeat(auto-fill, 350px);
+    grid-template: repeat(auto-fill, 150px) / repeat(auto-fill, 350px);
     gap: 10px;
     position: absolute;
     margin: 2% 0 0 2%;
     width: 105.5%;
-    height: 109%;
+    height: 106%;
     overflow: auto;
     list-style: none;
     justify-content: center;
@@ -28,14 +57,22 @@ section {
 
 #recipes-list > a {
     text-decoration: none;
-    color: var(--secondary-text-color);
+    color: var(--tertiary-text-color);
+    background: var(--recipe-card-color);
+    border: 1px solid var(--border2-color);
+}
+
+#recipes-list > a:hover {
+    background: var(--hover-recipe-card-color);
+    border: 1px solid var(--border-color);
+    transform: scale(101%);
+    transition: all 100ms ease-in;
 }
 
 .recipe-item {
     display: grid;
     grid-template-columns: 250px 100px;
-    border: 1px solid var(--border-color);
-    height: 200px;
+    height: 150px;
     justify-items: center;
     align-items: center;
 }

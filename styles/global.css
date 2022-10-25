@@ -17,7 +17,14 @@
         rgb(125, 126, 93),
         rgb(143, 145, 106)
     );
+    --label-color: linear-gradient(
+        90deg,
+        rgba(158, 153, 145, 0.836),
+        rgba(250, 240, 226, 0.5),
+        rgba(250, 240, 226, 0.021)
+    );
     --border-color: rgb(250, 240, 226);
+    --border2-color: rgba(250, 240, 226, 0.404);
     --nav-border-color: rgb(68, 47, 56);
     --nav-background: linear-gradient(
         90deg,
@@ -36,8 +43,11 @@
         rgb(68, 47, 56),
         rgb(138, 103, 118)
     );
+    --recipe-card-color: rgba(250, 240, 226, 0.5);
+    --hover-recipe-card-color: rgba(250, 240, 226, 0.75);
     --primary-text-color: #f8f5ed;
     --secondary-text-color: #302f2d;
+    --tertiary-text-color: #050505;
     --primary-font: sans-serif;
 }
 
