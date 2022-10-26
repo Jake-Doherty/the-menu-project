@@ -9,6 +9,12 @@
         <title>The Menu Project</title>
         <link rel="icon" type="image/x-icon" href="/assets/menu.png" />
 
+        <!-- supabase -->
+        <script
+            defer
+            src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@1.35.7/dist/umd/supabase.min.js"
+        ></script>
+
         <!-- js -->
         <script type="module" src="/app.js"></script>
         <script type="module" src="/nav.js"></script>
@@ -20,8 +26,9 @@
         <link rel="stylesheet" href="/styles/home.css" />
     </head>
     <body>
+        <div id="background-blur"></div>
         <header>
-            <img class="logo" src="assets/menu.png" alt="site-logo" />
+            <img class="logo" src="/assets/loaf-31957.png" alt="site-logo" />
             <h1 class="site-title">The Recipe Project</h1>
         </header>
         <main>
@@ -55,7 +62,10 @@
                         >Shopping List</a
                     >
                     <div></div>
-                    <a class="nav-menu-link link-closed-opacity" href="/"
+                    <a
+                        id="sign-out-link"
+                        class="nav-menu-link link-closed-opacity"
+                        href="/"
                         >Sign Out</a
                     >
                 </nav>

@@ -1,16 +1,18 @@
 /* body {
 } */
 
-section {
+#recipe-area-content {
+    display: grid;
+    grid-template-rows: 80px 1fr;
     position: absolute;
-    width: 93%;
-    height: 85%;
+    width: 100vw;
+    height: 100%;
     z-index: 1;
 }
 
 #page-nav-and-search {
     position: relative;
-    top: 10px;
+    /* top: 10px; */
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
@@ -42,12 +44,12 @@ section {
 
 #recipes-list {
     display: grid;
-    grid-template: repeat(auto-fill, 150px) / repeat(auto-fill, 350px);
+    grid-template: repeat(auto-fill, 125px) / repeat(auto-fill, 290px);
     gap: 10px;
-    position: absolute;
-    margin: 2% 0 0 2%;
-    width: 105.5%;
-    height: 106%;
+    position: relative;
+    /* margin: 2% 0 0 2%; */
+    width: 99%;
+    height: 99%;
     overflow: auto;
     list-style: none;
     justify-content: center;
@@ -69,8 +71,8 @@ section {
 
 .recipe-item {
     display: grid;
-    grid-template-columns: 250px 100px;
-    height: 150px;
+    grid-template-columns: 200px 90px;
+    height: 125px;
     justify-items: center;
     align-items: center;
 }

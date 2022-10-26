@@ -5,6 +5,7 @@ import {
     getRecipesOnPageLoad,
 } from "../fetch-utils.js";
 import { renderRecipes } from "../render-utils.js";
+import "../auth/user.js";
 
 // GET DOM ELEMENTS
 const recipeSearchForm = document.getElementById("recipe-search-form");

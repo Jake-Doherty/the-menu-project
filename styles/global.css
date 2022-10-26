@@ -1,5 +1,5 @@
 :root {
-    --background-color: ;
+    /* --background-color: ; */
     --header-background-color: linear-gradient(
         0deg,
         rgb(184, 184, 184),
@@ -26,19 +26,11 @@
     --nav-link-hover-background: #475841ff;
     --nav-link-hover-shadow: #434c40ff;
     --nav-link-background: #b7c4beff;
-    --card-color: rgba(218, 220, 218, 0.548);
+    --card-color: rgba(218, 220, 218, 0.219);
     --hover-recipe-card-color: rgba(218, 220, 218, 0.925);
     --primary-text-color: rgb(245, 245, 245);
     --secondary-text-color: rgb(64, 64, 64);
     --tertiary-text-color: rgb(0, 0, 0);
-
-    /* coolors color pallet */
-    --gainsboro: ;
-    --ash-gray: ;
-    --opal: ;
-    --xanadu: ;
-    --rifle-green: ;
-    --rifle-green-2: ;
     --primary-font: sans-serif;
 }
 
@@ -55,16 +47,24 @@ body {
     grid-template-rows: 60px 1fr 60px;
     height: 100vh;
     width: 100vw;
+    overflow: hidden;
+}
+
+#background-blur {
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    filter: blur(2px);
     background: url("/assets/spaghetti-1932466.jpg");
     background-position: center;
     background-size: cover;
-    overflow: hidden;
 }
 
 header {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: center;
+    align-items: center;
     /* height: 8vh; */
     width: 100vw;
     position: relative;
@@ -75,12 +75,14 @@ header {
 }
 
 .logo {
-    margin: auto 0;
+    width: fit-content;
+    /* margin: auto; */
     height: 80%;
 }
 
 .site-title {
-    margin: auto 20px;
+    width: fit-content;
+    /* margin: auto; */
     text-align-last: right;
     text-shadow: 2px 3px 3px rgba(0, 0, 0, 0.418);
 }
@@ -211,5 +213,55 @@ nav > a:hover {
 }
 
 .hidden {
+    display: none;
+}
+
+::-webkit-scrollbar {
+    height: 15px;
+    width: 15px;
+}
+
+::-webkit-scrollbar-button:vertical:start:decrement {
+    background: var(--card-color);
+    border: 1px solid var(--border2-color);
+    border-radius: 7.5px 7.5px 0 0;
+    height: 15px;
+    width: 15px;
+}
+
+::-webkit-scrollbar-button:vertical:start:decrement:hover {
+    background: var(--hover-recipe-card-color);
+}
+
+::-webkit-scrollbar-button:vertical:end:increment {
+    background: var(--card-color);
+    border-radius: 0 0 7.5px 7.5px;
+    border: 1px solid var(--border2-color);
+    height: 15px;
+    width: 15px;
+}
+
+::-webkit-scrollbar-button:vertical:end:increment:hover {
+    background: var(--hover-recipe-card-color);
+}
+
+::-webkit-scrollbar-track {
+    background: var(--card-color);
+    box-shadow: inset 0px 0 2px 0.5px var(--nav-link-hover-shadow);
+    border: 1px solid var(--border2-color);
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    background: var(--card-color);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    border-radius: 5px;
+    background: var(--hover-recipe-card-color);
+    box-shadow: inset 0px 0 5px 0.5px var(--nav-link-hover-shadow);
+}
+
+::-webkit-scrollbar-corner {
     display: none;
 }

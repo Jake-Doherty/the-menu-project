@@ -1,0 +1,57 @@
+#auth-form {
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    height: 500px;
+    margin: auto;
+    background: var(--card-color);
+    border: 1px solid var(--border-color);
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+label {
+    display: flex;
+    flex-direction: column;
+}
+
+label:not(input) {
+    font-size: 0.8em;
+}
+
+input {
+    height: 25px;
+    width: 300px;
+    padding-left: 5px;
+}
+
+input::placeholder {
+    opacity: 0.3;
+    color: var(--secondary-text-color);
+}
+
+form > button {
+    width: 120px;
+    height: 30px;
+    background: var(--nav-link-hover-shadow);
+    color: var(--primary-text-color);
+    border: 1px solid var(--border-color);
+    font-weight: bolder;
+}
+
+form > button:hover {
+    color: var(--secondary-text-color);
+    background: var(--nav-link-background);
+    transition: all 200ms ease-in;
+}
+
+form > a {
+    color: var(--tertiary-text-color);
+}
+
+.error {
+    color: red;
+    font-weight: bolder;
+    background: var(--nav-link-hover-shadow);
+    box-shadow: 0px 0px 10px 7px var(--nav-link-hover-shadow);
+}
