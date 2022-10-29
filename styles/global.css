@@ -32,6 +32,19 @@
     --secondary-text-color: rgb(64, 64, 64);
     --tertiary-text-color: rgb(0, 0, 0);
     --primary-font: sans-serif;
+
+    /* coolors pallet */
+    /* 
+    --platinum: #e6e8e6ff;
+    --gainsboro: #dadcdaff;
+    --light-gray: #ced0ceff;
+    --ash-gray: #b7c4beff;
+    --opal: #9fb8adff;
+    --xanadu: #738877ff;
+    --rifle-green: #475841ff;
+    --rifle-green-2: #434c40ff;
+    --onyx: #3f403fff; 
+    */
 }
 
 * {
@@ -65,7 +78,6 @@ header {
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    /* height: 8vh; */
     width: 100vw;
     position: relative;
     background: var(--header-background-color);
@@ -76,25 +88,21 @@ header {
 
 .logo {
     width: fit-content;
-    /* margin: auto; */
     height: 80%;
 }
 
 .site-title {
     width: fit-content;
-    /* margin: auto; */
     text-align-last: right;
     text-shadow: 2px 3px 3px rgba(0, 0, 0, 0.418);
 }
 
 main {
     display: grid;
-    /* height: 84vh; */
     position: relative;
 }
 
 footer {
-    /* height: 8vh; */
     position: relative;
     background: var(--footer-background-color);
     box-shadow: 0px -3px 5px 0.5px rgba(0, 0, 0, 0.212);
@@ -242,6 +250,29 @@ nav > a:hover {
 }
 
 ::-webkit-scrollbar-button:vertical:end:increment:hover {
+    background: var(--hover-recipe-card-color);
+}
+::-webkit-scrollbar-button:horizontal:start:decrement {
+    background: var(--card-color);
+    border: 1px solid var(--border2-color);
+    border-radius: 7.5px 0 0 7.5px;
+    height: 15px;
+    width: 15px;
+}
+
+::-webkit-scrollbar-button:horizontal:start:decrement:hover {
+    background: var(--hover-recipe-card-color);
+}
+
+::-webkit-scrollbar-button:horizontal:end:increment {
+    background: var(--card-color);
+    border-radius: 0 7.5px 7.5px 0;
+    border: 1px solid var(--border2-color);
+    height: 15px;
+    width: 15px;
+}
+
+::-webkit-scrollbar-button:horizontal:end:increment:hover {
     background: var(--hover-recipe-card-color);
 }
 
