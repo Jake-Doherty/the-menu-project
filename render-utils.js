@@ -1,3 +1,44 @@
+export function renderFeaturedRecipe(recipe) {
+    const aPageLink = document.createElement("a");
+    aPageLink.classList.add("featured-recipe-link");
+    aPageLink.href = `${recipe.recipe.url}`;
+    aPageLink.target = "_blank";
+
+    const li = document.createElement("li");
+    li.classList.add("featured-recipe-item");
+
+    const recipeInfoDiv = document.createElement("div");
+    recipeInfoDiv.classList.add("featured-recipe-info");
+
+    const pLabel = document.createElement("p");
+    pLabel.textContent = `${recipe.recipe.label}`;
+    pLabel.classList.add("featured-recipe-title");
+
+    const pTimeToCook = document.createElement("p");
+    pTimeToCook.textContent = `${recipe.recipe.totalTime} min`;
+    pTimeToCook.classList.add("featured-cook-time");
+    if (pTimeToCook.textContent === "0 min") {
+        pTimeToCook.classList.add("hidden");
+    }
+
+    const pServings = document.createElement("p");
+    pServings.textContent = `Serves ${recipe.recipe.yield}`;
+    pServings.classList.add("featured-servings");
+
+    const img = document.createElement("img");
+    img.src = `${recipe.recipe.images.THUMBNAIL.url}`;
+    img.alt = `${recipe.recipe.label}`;
+    img.classList.add("featured-recipe-preview");
+
+    recipeInfoDiv.append(pLabel, pTimeToCook, pServings);
+
+    li.append(recipeInfoDiv, img);
+
+    aPageLink.append(li);
+
+    return aPageLink;
+}
+
 export function renderRecipes(recipe) {
     const aPageLink = document.createElement("a");
     aPageLink.href = `${recipe.recipe.url}`;
