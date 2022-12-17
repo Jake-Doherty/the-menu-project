@@ -45,7 +45,7 @@
 #recipes-list {
     display: grid;
     grid-template: repeat(auto-fill, 125px) / repeat(auto-fill, 290px);
-    gap: 10px;
+    gap: 30px;
     position: relative;
     /* margin: 2% 0 0 2%; */
     width: 99%;
@@ -94,4 +94,16 @@
 .recipe-preview {
     scale: 80%;
     border-radius: 50%;
+}
+
+#add-to-my-recipes {
+    position: relative;
+    width: 100px;
+    height: 40px;
+    top: -23px;
+    left: 5px;
+    border-radius: 0px;
+    border: 1px solid var(--border-color);
+    background: var(--label-color);
+    color: var(--tertiary-text-color);
 }
