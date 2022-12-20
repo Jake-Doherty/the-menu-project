@@ -51,7 +51,15 @@ export function renderFeaturedRecipe(recipe) {
 
 export function renderRecipes(recipe) {
     // original recipe publishing
+    const cardContainer = document.createElement("div");
+    cardContainer.classList.add("recipe-card");
+
+    const addToMyRecipes = document.createElement("button");
+    addToMyRecipes.textContent = "add to my recipes";
+    addToMyRecipes.classList.add("add-to-my-recipes");
+
     const aPageLink = document.createElement("a");
+    aPageLink.classList.add("recipe-link");
     aPageLink.href = `${recipe.recipe.url}`;
     aPageLink.target = "_blank";
 
@@ -96,5 +104,7 @@ export function renderRecipes(recipe) {
     // insert recipe card into anchor to create link
     aPageLink.append(li);
 
-    return aPageLink;
+    cardContainer.append(aPageLink, addToMyRecipes);
+
+    return cardContainer;
 }

@@ -82,10 +82,7 @@ function displayRecipes() {
     queryTotalCount.textContent = `displaying ${count} of ${recipes.count} results`;
     for (const recipe of recipes.hits) {
         const recipeEl = renderRecipes(recipe);
-        const addToMyRecipes = document.createElement("button");
-        addToMyRecipes.textContent = "add to my recipes";
-        addToMyRecipes.setAttribute("id", "add-to-my-recipes");
-        recipeEl.append(addToMyRecipes);
+
         recipesList.append(recipeEl);
     }
 }

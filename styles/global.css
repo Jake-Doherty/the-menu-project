@@ -26,7 +26,13 @@
     --nav-link-hover-background: #475841ff;
     --nav-link-hover-shadow: #434c40ff;
     --nav-link-background: #b7c4beff;
-    --card-color: rgba(218, 220, 218, 0.219);
+    --card-color: rgba(218, 220, 218, 0.295);
+    --card-info-color: linear-gradient(
+        90deg,
+        rgb(184, 184, 184),
+        rgba(206, 208, 206, 0.548),
+        rgba(218, 220, 218, 0.123)
+    );
     --hover-recipe-card-color: rgba(218, 220, 218, 0.925);
     --primary-text-color: rgb(245, 245, 245);
     --secondary-text-color: rgb(64, 64, 64);

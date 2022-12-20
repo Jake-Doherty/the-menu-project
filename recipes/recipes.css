@@ -55,18 +55,24 @@
     justify-content: center;
 }
 
-#recipes-list > a {
-    text-decoration: none;
+.recipe-card {
+    height: 125px;
+    text-decoration: none !important;
     color: var(--tertiary-text-color);
     background: var(--card-color);
     border: 1px solid var(--border2-color);
 }
 
-#recipes-list > a:hover {
+.recipe-card:hover {
     background: var(--hover-recipe-card-color);
     border: 1px solid var(--border-color);
     transform: scale(101%);
     transition: all 100ms ease-in;
+}
+
+.recipe-link {
+    color: var(--tertiary-text-color);
+    text-decoration: none !important;
 }
 
 .recipe-item {
@@ -77,17 +83,30 @@
     align-items: center;
 }
 
+.recipe-card:hover .recipe-info {
+    width: 100%;
+    background: transparent;
+}
+
+.recipe-info {
+    width: 100%;
+    background: var(--card-info-color);
+}
+
 .recipe-title {
+    text-decoration: none !important;
     font-weight: bold;
     text-align: center;
     text-decoration: underline;
 }
 
 .cook-time {
+    text-decoration: none !important;
     text-align: center;
 }
 
 .servings {
+    text-decoration: none !important;
     text-align: center;
 }
 
@@ -96,11 +115,11 @@
     border-radius: 50%;
 }
 
-#add-to-my-recipes {
+.add-to-my-recipes {
     position: relative;
     width: 100px;
     height: 40px;
-    top: -23px;
+    top: -20px;
     left: 5px;
     border-radius: 0px;
     border: 1px solid var(--border-color);
