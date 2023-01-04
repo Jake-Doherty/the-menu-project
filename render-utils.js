@@ -1,3 +1,5 @@
+import { insertRecipeToDb } from "./fetch-utils.js";
+
 export function renderFeaturedRecipe(recipe) {
     // original recipe publishing
     const aPageLink = document.createElement("a");
@@ -54,6 +56,29 @@ export function renderRecipes(recipe) {
     const cardContainer = document.createElement("div");
     cardContainer.classList.add("recipe-card");
 
+    // some of this may not be needed, needs more research
+
+    const scrapeForm = document.createElement("form");
+
+    const recipeUrl = document.createElement("input");
+    recipeUrl.textContent = recipe.recipe.url;
+    recipeUrl.classList.add("hidden", "recipe-input-url");
+    recipeUrl.name = "recipe-input-url";
+
+    scrapeForm.setAttribute("method", "post");
+    scrapeForm.setAttribute("onSubmit", (e) => {
+        e.preventDefault();
+    });
+    scrapeForm.setAttribute("action", "http://localhost:7890/api/v1/recipes");
+
+    scrapeForm.addEventListener("submit", async (e) => {
+        e.preventDefault();
+
+        const response = await insertRecipeToDb(recipe.recipe.url);
+
+        return response;
+    });
+
     const addToMyRecipes = document.createElement("button");
     addToMyRecipes.textContent = "add to my recipes";
     addToMyRecipes.classList.add("add-to-my-recipes");
@@ -104,7 +129,9 @@ export function renderRecipes(recipe) {
     // insert recipe card into anchor to create link
     aPageLink.append(li);
 
-    cardContainer.append(aPageLink, addToMyRecipes);
+    scrapeForm.append(recipeUrl, addToMyRecipes);
+
+    cardContainer.append(aPageLink, scrapeForm);
 
     return cardContainer;
 }
