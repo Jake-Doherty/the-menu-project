@@ -1,0 +1,117 @@
+/* main {
+    grid-template-columns: 200px 1fr 45px;
+} */
+
+#homepage-content {
+    display: grid;
+    grid-template-rows: 175px 1fr;
+    width: 100vw;
+    height: 100%;
+    /* padding: 0 40px 0 43px; */
+    z-index: 1;
+    justify-content: center;
+}
+
+/*              HERO SECTION                 */
+/*              HERO SECTION                 */
+#homepage-heros {
+    display: grid;
+    width: 100vw;
+    /* height: 160px; */
+    grid-template-columns: 50% 50%;
+    /* gap: 5px; */
+    /* margin-right: 105px; */
+    place-items: center;
+}
+
+/*              FEATURED RECIPES                 */
+#featured-recipes {
+    display: grid;
+    width: 95%;
+    height: 150px;
+    margin: 0 auto;
+    color: var();
+    background: var(--card-color);
+    border: 1px solid var(--border2-color);
+}
+
+.featured-recipe-header {
+    margin-top: 5px;
+    text-align: center;
+}
+
+#featured-recipe-list {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-auto-flow: column;
+    gap: 10px;
+    margin: 0 10px 10px 10px;
+    padding: 3px;
+    overflow: auto;
+    list-style: none;
+}
+
+.featured-recipe-link {
+    text-decoration: none;
+    color: initial;
+}
+
+.featured-recipe-item {
+    display: grid;
+    min-width: fit-content;
+    /* height: 90%; */
+    margin: auto 0;
+    padding: 5px;
+    border: 1px solid var(--border2-color);
+    background: var(--card-color);
+    justify-items: center;
+    font-size: 0.8vw;
+}
+
+.featured-recipe-info {
+    text-align: center;
+}
+
+.featured-recipe-title {
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+.featured-recipe-preview {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+/*              INGREDIENT OF THE WEEK               */
+#ingredients-of-the-week {
+    width: 95%;
+    height: 150px;
+    margin: 0 auto;
+    /* padding: 5px; */
+    color: var();
+    background: var(--card-color);
+    border: 1px solid var(--border2-color);
+}
+
+#homepage-main-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    justify-items: center;
+    /* top: 20px; */
+    /* gap: 20px; */
+}
+
+#homepage-main-content > article {
+    /* height: 100vh; */
+    width: 93%;
+    height: 95%;
+    position: relative;
+    background: var(--card-color);
+    border: 1px solid var(--border2-color);
+    align-self: center;
+    /* margin-bottom: 50px; */
+}

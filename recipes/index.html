@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- metadata -->
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <!-- title and favicon -->
+        <title>The Menu Project</title>
+        <link rel="icon" type="image/x-icon" href="/assets/menu.png" />
+
+        <!-- supabase -->
+        <script
+            defer
+            src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@1.35.7/dist/umd/supabase.min.js"
+        ></script>
+
+        <!-- js -->
+        <script type="module" src="../app.js"></script>
+        <script type="module" src="../nav.js"></script>
+        <script type="module" src="/recipes/recipes.js"></script>
+
+        <!-- fonts -->
+
+        <!-- css -->
+        <link rel="stylesheet" href="/styles/global.css" />
+        <link rel="stylesheet" href="/recipes/recipes.css" />
+    </head>
+    <body>
+        <div id="background-blur"></div>
+        <header>
+            <img class="logo" src="/assets/loaf-31957.png" alt="site-logo" />
+            <h1 class="site-title">The Recipe Project</h1>
+        </header>
+        <main>
+            <aside id="nav-menu" class="toggle-nav-menu-closed">
+                <div id="menu-btn-bar">
+                    <div id="menu-btn" class="toggle-menu-closed">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </div>
+                </div>
+                <nav>
+                    <a class="nav-menu-link link-closed-opacity" href="/"
+                        >Home</a
+                    >
+                    <a class="nav-menu-link link-closed-opacity" href="/"
+                        >Profile</a
+                    >
+                    <a
+                        class="nav-menu-link link-closed-opacity"
+                        href="/recipes/index.html"
+                        >Discover Recipes</a
+                    >
+                    <a class="nav-menu-link link-closed-opacity" href="/"
+                        >Create Menu</a
+                    >
+                    <a class="nav-menu-link link-closed-opacity" href="/"
+                        >View Calendar</a
+                    >
+                    <a class="nav-menu-link link-closed-opacity" href="/"
+                        >Shopping List</a
+                    >
+                    <div></div>
+                    <a
+                        id="sign-out-link"
+                        class="nav-menu-link link-closed-opacity"
+                        href="/"
+                        >Sign Out</a
+                    >
+                </nav>
+            </aside>
+            <section id="recipe-area-content">
+                <div id="page-nav-and-search">
+                    <form id="recipe-search-form">
+                        <label>
+                            <p>Search Input</p>
+                            <input
+                                name="recipe-search"
+                                type="text"
+                                placeholder="Search by dish name..."
+                            />
+                        </label>
+                        <label>
+                            <p>Dietary Restrictions</p>
+                            <select name="health-restrictions">
+                                <option selected="" value="">None</option>
+                                <option value="alcohol-cocktail">
+                                    alcohol-cocktail
+                                </option>
+                                <option value="alcohol-free">
+                                    alcohol-free
+                                </option>
+                                <option value="celery-free">celery-free</option>
+                                <option value="crustacean-free">
+                                    crustacean-free
+                                </option>
+                                <option value="dairy-free">dairy-free</option>
+                                <option value="DASH">DASH</option>
+                                <option value="egg-free">egg-free</option>
+                                <option value="fish-free">fish-free</option>
+                                <option value="fodmap-free">fodmap-free</option>
+                                <option value="gluten-free">gluten-free</option>
+                                <option value="immuno-supportive">
+                                    immuno-supportive
+                                </option>
+                                <option value="keto-friendly">
+                                    keto-friendly
+                                </option>
+                                <option value="kidney-friendly">
+                                    kidney-friendly
+                                </option>
+                                <option value="kosher">kosher</option>
+                                <option value="low-fat-abs">low-fat-abs</option>
+                                <option value="low-potassium">
+                                    low-potassium
+                                </option>
+                                <option value="low-sugar">low-sugar</option>
+                                <option value="lupine-free">lupine-free</option>
+                                <option value="Mediterranean">
+                                    Mediterranean
+                                </option>
+                                <option value="mollusk-free">
+                                    mollusk-free
+                                </option>
+                                <option value="mustard-free">
+                                    mustard-free
+                                </option>
+                                <option value="no-oil-added">
+                                    no-oil-added
+                                </option>
+                                <option value="paleo">paleo</option>
+                                <option value="peanut-free">peanut-free</option>
+                                <option value="pescatarian">pescatarian</option>
+                                <option value="pork-free">pork-free</option>
+                                <option value="red-meat-free">
+                                    red-meat-free
+                                </option>
+                                <option value="sesame-free">sesame-free</option>
+                                <option value="shellfish-free">
+                                    shellfish-free
+                                </option>
+                                <option value="soy-free">soy-free</option>
+                                <option value="sugar-conscious">
+                                    sugar-conscious
+                                </option>
+                                <option value="sulfite-free">
+                                    sulfite-free
+                                </option>
+                                <option value="tree-nut-free">
+                                    tree-nut-free
+                                </option>
+                                <option value="vegan">vegan</option>
+                                <option value="vegetarian">vegetarian</option>
+                                <option value="wheat-free">wheat-free</option>
+                            </select>
+                        </label>
+                        <button><pre>   +   </pre></button>
+                    </form>
+                    <p id="query-total-count"></p>
+                    <button id="next-page">Load More Results</button>
+                </div>
+                <ul id="recipes-list"></ul>
+            </section>
+            <p id="error-display" class="hidden"></p>
+        </main>
+        <footer></footer>
+    </body>
+</html>

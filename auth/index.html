@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- metadata -->
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+        <!-- title and favicon -->
+        <link rel="icon" type="image/x-icon" href="/assets/download.png" />
+        <title>Sign In</title>
+
+        <!-- supabase -->
+        <script
+            defer
+            src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@1.35.7/dist/umd/supabase.min.js"
+        ></script>
+
+        <!-- js -->
+        <script type="module" src="/auth/auth.js"></script>
+
+        <!-- css -->
+        <link rel="stylesheet" href="/styles/global.css" />
+        <link rel="stylesheet" href="/styles/auth-form.css" />
+    </head>
+
+    <body>
+        <div id="background-blur"></div>
+        <header class="page-header">
+            <img class="logo" src="/assets/loaf-31957.png" />
+            <p class="site-title">The Recipe Project</p>
+        </header>
+
+        <main>
+            <form id="auth-form">
+                <h2></h2>
+                <label>
+                    Email
+                    <input
+                        type="email"
+                        name="email"
+                        placeholder="food@cooking.com"
+                        required
+                    />
+                </label>
+                <label>
+                    Password
+                    <input
+                        type="password"
+                        name="password"
+                        placeholder="********"
+                        required
+                    />
+                </label>
+                <button></button>
+                <p class="error"></p>
+                <a href=""></a>
+            </form>
+        </main>
+    </body>
+</html>
