@@ -1,4 +1,5 @@
-import { insertRecipeToDb } from "./fetch-utils.js";
+import { getUser, insertRecipeToDb } from "./fetch-utils.js";
+const user = getUser();
 
 export function renderFeaturedRecipe(recipe) {
     // original recipe publishing
@@ -56,32 +57,16 @@ export function renderRecipes(recipe) {
     const cardContainer = document.createElement("div");
     cardContainer.classList.add("recipe-card");
 
-    // some of this may not be needed, needs more research
-
-    const scrapeForm = document.createElement("form");
-
-    const recipeUrl = document.createElement("input");
-    recipeUrl.textContent = recipe.recipe.url;
-    recipeUrl.classList.add("hidden", "recipe-input-url");
-    recipeUrl.name = "recipe-input-url";
-
-    scrapeForm.setAttribute("method", "post");
-    scrapeForm.setAttribute("onSubmit", (e) => {
-        e.preventDefault();
-    });
-    scrapeForm.setAttribute("action", "http://localhost:7890/api/v1/recipes");
-
-    scrapeForm.addEventListener("submit", async (e) => {
-        e.preventDefault();
-
-        const response = await insertRecipeToDb(recipe.recipe.url);
-
-        return response;
-    });
-
     const addToMyRecipes = document.createElement("button");
     addToMyRecipes.textContent = "add to my recipes";
     addToMyRecipes.classList.add("add-to-my-recipes");
+    addToMyRecipes.addEventListener("click", async (e) => {
+        e.preventDefault();
+
+        const response = await insertRecipeToDb(recipe.recipe.url, user.id);
+
+        return response;
+    });
 
     const aPageLink = document.createElement("a");
     aPageLink.classList.add("recipe-link");
@@ -120,18 +105,16 @@ export function renderRecipes(recipe) {
     img.alt = `${recipe.recipe.label}`;
     img.classList.add("recipe-preview");
 
-    // insert recipe info text into info container
+    // // insert recipe info text into info container
     recipeInfoDiv.append(pLabel, pTimeToCook, pServings);
 
-    // insert recipe info and image into recipe card
+    // // insert recipe info and image into recipe card
     li.append(recipeInfoDiv, img);
 
-    // insert recipe card into anchor to create link
+    // // insert recipe card into anchor to create link
     aPageLink.append(li);
 
-    scrapeForm.append(recipeUrl, addToMyRecipes);
-
-    cardContainer.append(aPageLink, scrapeForm);
+    cardContainer.append(aPageLink, addToMyRecipes);
 
     return cardContainer;
 }

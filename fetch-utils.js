@@ -56,7 +56,7 @@ export async function getMoreRecipes(nextURL) {
     return data;
 }
 
-export async function insertRecipeToDb(url) {
+export async function insertRecipeToDb(url, userId) {
     // console.log("URL TO BE SCRAPED", { url });
     const baseURL = "http://localhost:7890/api/v1/recipes/myrecipes";
     let response = await fetch(baseURL, {
@@ -67,10 +67,10 @@ export async function insertRecipeToDb(url) {
             "Content-Type": "application/json",
             Accept: "application/json",
         },
-        body: JSON.stringify({ url }),
+        body: JSON.stringify({ url, userId }),
     });
-    // const addedAlert = alert("added to your recipes!");
-    // return addedAlert;
+    const addedAlert = alert("added to your recipes!");
+    return addedAlert;
 }
 
 //
