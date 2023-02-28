@@ -1,0 +1,128 @@
+/* body {
+} */
+
+#recipe-area-content {
+    display: grid;
+    grid-template-rows: 80px 1fr;
+    position: absolute;
+    width: 100vw;
+    height: 100%;
+    z-index: 1;
+}
+
+#page-nav-and-search {
+    position: relative;
+    /* top: 10px; */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+#recipe-search-form {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    background: var(--card-color);
+}
+
+#recipe-search-form label {
+    background: var(--label-color);
+    color: var(--secondary-text-color);
+    border-top: 1px solid var(--border-color);
+    border-left: 1px solid var(--border-color);
+}
+
+#query-total-count {
+    position: relative;
+    left: 60px;
+    width: fit-content;
+    background: var(--card-color);
+    border: 1px solid var(--border-color);
+}
+
+#recipes-list {
+    display: grid;
+    grid-template: repeat(auto-fill, 125px) / repeat(auto-fill, 290px);
+    gap: 30px;
+    position: relative;
+    /* margin: 2% 0 0 2%; */
+    width: 99%;
+    height: 99%;
+    overflow: auto;
+    list-style: none;
+    justify-content: center;
+}
+
+.recipe-card {
+    height: 125px;
+    text-decoration: none !important;
+    color: var(--tertiary-text-color);
+    background: var(--card-color);
+    border: 1px solid var(--border2-color);
+}
+
+.recipe-card:hover {
+    background: var(--hover-recipe-card-color);
+    border: 1px solid var(--border-color);
+    transform: scale(101%);
+    transition: all 100ms ease-in;
+}
+
+.recipe-link {
+    color: var(--tertiary-text-color);
+    text-decoration: none !important;
+}
+
+.recipe-item {
+    display: grid;
+    grid-template-columns: 200px 90px;
+    height: 125px;
+    justify-items: center;
+    align-items: center;
+}
+
+.recipe-card:hover .recipe-info {
+    width: 100%;
+    background: transparent;
+}
+
+.recipe-info {
+    width: 100%;
+    background: var(--card-info-color);
+}
+
+.recipe-title {
+    text-decoration: none !important;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: underline;
+}
+
+.cook-time {
+    text-decoration: none !important;
+    text-align: center;
+}
+
+.servings {
+    text-decoration: none !important;
+    text-align: center;
+}
+
+.recipe-preview {
+    scale: 80%;
+    border-radius: 50%;
+}
+
+.add-to-my-recipes {
+    position: relative;
+    width: 100px;
+    height: 40px;
+    top: -20px;
+    left: 5px;
+    border-radius: 0px;
+    border: 1px solid var(--border-color);
+    background: var(--label-color);
+    color: var(--tertiary-text-color);
+}

@@ -1,58 +1,304 @@
 :root {
-    --background-color: linear-gradient(
+    /* --background-color: ; */
+    --header-background-color: linear-gradient(
         0deg,
-        rgb(192, 184, 167),
-        rgb(231, 221, 201),
-        rgb(248, 238, 217)
+        rgb(184, 184, 184),
+        rgb(206, 208, 206),
+        rgb(226, 229, 226)
     );
-    --header-color: linear-gradient(
-        0deg,
-        rgb(139, 139, 103),
-        rgb(154, 155, 115),
-        rgb(171, 172, 127)
+    --footer-background-color: linear-gradient(
+        180deg,
+        rgb(184, 184, 184),
+        rgb(206, 208, 206),
+        rgb(226, 229, 226)
     );
-    --footer-color: linear-gradient(
-        0deg,
-        rgb(106, 107, 78),
-        rgb(125, 126, 93),
-        rgb(143, 145, 106)
+    --label-color: linear-gradient(
+        90deg,
+        rgb(184, 184, 184),
+        rgba(206, 208, 206, 0.548),
+        rgba(226, 229, 226, 0.205)
     );
+    --border-color: #e6e8e6ff;
+    --border2-color: rgba(230, 232, 230, 0.63);
+    --nav-border-color: ;
+    --nav-background: #9fb8adff;
+    --nav-button-color: #738877ff;
+    --nav-link-hover-background: #475841ff;
+    --nav-link-hover-shadow: #434c40ff;
+    --nav-link-background: #b7c4beff;
+    --card-color: rgba(218, 220, 218, 0.295);
+    --card-info-color: linear-gradient(
+        90deg,
+        rgb(184, 184, 184),
+        rgba(206, 208, 206, 0.548),
+        rgba(218, 220, 218, 0.123)
+    );
+    --hover-recipe-card-color: rgba(218, 220, 218, 0.925);
+    --primary-text-color: rgb(245, 245, 245);
+    --secondary-text-color: rgb(64, 64, 64);
+    --tertiary-text-color: rgb(0, 0, 0);
+    --primary-font: sans-serif;
+
+    /* coolors pallet */
+    /* 
+    --platinum: #e6e8e6ff;
+    --gainsboro: #dadcdaff;
+    --light-gray: #ced0ceff;
+    --ash-gray: #b7c4beff;
+    --opal: #9fb8adff;
+    --xanadu: #738877ff;
+    --rifle-green: #475841ff;
+    --rifle-green-2: #434c40ff;
+    --onyx: #3f403fff; 
+    */
 }
 
 * {
     /* border: 1px solid black; */
     margin: 0;
     padding: 0;
+    font-family: var(--primary-font);
+    /* color: var(--primary-text-color); */
 }
 
 body {
+    display: grid;
+    grid-template-rows: 60px 1fr 60px;
     height: 100vh;
     width: 100vw;
-    background: var(--background-color);
     overflow: hidden;
 }
 
+#background-blur {
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    filter: blur(2px);
+    background: url("/assets/spaghetti-1932466.jpg");
+    background-position: center;
+    background-size: cover;
+}
+
 header {
-    height: 10vh;
-    background: var(--header-color);
-    box-shadow: 3px 0px 3px 1px black;
-    filter: blur(5px);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    position: relative;
+    background: var(--header-background-color);
+    box-shadow: 0px 3px 5px 0.5px rgba(0, 0, 0, 0.432);
+    border-bottom: 0.5px solid var(--border-color);
+    z-index: 5;
+}
+
+.logo {
+    width: fit-content;
+    height: 80%;
+}
+
+.site-title {
+    width: fit-content;
+    text-align-last: right;
+    text-shadow: 2px 3px 3px rgba(0, 0, 0, 0.418);
 }
 
 main {
-    height: 80vh;
+    display: grid;
+    position: relative;
 }
 
 footer {
-    height: 10vh;
-    background: var(--footer-color);
-    filter: blur(5px);
+    position: relative;
+    background: var(--footer-background-color);
+    box-shadow: 0px -3px 5px 0.5px rgba(0, 0, 0, 0.212);
+    border-top: 0.5px solid var(--border-color);
+    z-index: 5;
 }
 
-#announcement {
-    width: fit-content;
-    position: relative;
-    margin: auto;
-    top: 40%;
+/*              NAVIGATION MENU              */
+aside {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 200px;
+    position: absolute;
     text-align: center;
+    background: var(--nav-background);
+    border-right: 0.5px solid var(--border-color);
+    box-shadow: 3px 0px 5px 0.5px rgba(0, 0, 0, 0.377);
+    overflow: hidden;
+    z-index: 2;
+}
+
+#menu-btn-bar {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+}
+
+#menu-btn {
+    width: fit-content;
+    cursor: pointer;
+    position: relative;
+    left: 5px;
+    border-radius: 50%;
+}
+
+#menu-btn:hover * {
+    background: var(--border-color);
+    transition: all 200ms ease-in;
+}
+
+#menu-btn > div {
+    width: 25px;
+    height: 5px;
+    margin: 3px auto;
+    background: var(--nav-button-color);
+    border-radius: 5px;
+}
+
+.toggle-menu-open {
+    transition: all 250ms ease-in;
+}
+
+.toggle-menu-closed {
+    transform: translateX(162px) rotate(-90deg);
+    transition: all 250ms ease-in;
+}
+
+.toggle-nav-menu-open {
+    transition: all 250ms ease-in;
+}
+
+.toggle-nav-menu-closed {
+    height: 45px;
+    border-bottom: 1px solid var(--border-color);
+    box-shadow: 0px 0px 5px 1px black;
+    transform: translateX(-160px);
+    opacity: 50%;
+    transition: all 250ms ease-in;
+}
+
+.toggle-nav-menu-closed:hover {
+    opacity: 100%;
+    transition: all 250ms ea;
+}
+
+nav {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-rows: 30px 30px 30px 30px 30px 30px 1fr 30px;
+    gap: 20px;
+    padding: 20px 0;
+    align-items: center;
+}
+
+nav > a {
+    width: 100%;
+    padding: 10px 0;
+    margin: 10px auto;
+    text-decoration: none;
+    font-weight: bolder;
+    color: var(--secondary-text-color);
+    background: var(--nav-link-background);
+}
+
+.link-closed-opacity {
+    pointer-events: none;
+    opacity: 0%;
+    transition: opacity 250ms;
+}
+
+.link-open-opacity {
+    opacity: 100%;
+    transition: opacity 250ms;
+}
+
+nav > a:hover {
+    transform: scale(110%);
+    background: var(--nav-link-hover-background);
+    color: var(--primary-text-color);
+    border: 1px solid var(--border-color);
+    box-shadow: -1px 0 5px 0.5px var(--nav-link-hover-shadow);
+    transition: all 100ms ease-in;
+}
+
+.hidden {
+    display: none;
+}
+
+::-webkit-scrollbar {
+    height: 15px;
+    width: 15px;
+}
+
+::-webkit-scrollbar-button:vertical:start:decrement {
+    background: var(--card-color);
+    border: 1px solid var(--border2-color);
+    border-radius: 7.5px 7.5px 0 0;
+    height: 15px;
+    width: 15px;
+}
+
+::-webkit-scrollbar-button:vertical:start:decrement:hover {
+    background: var(--hover-recipe-card-color);
+}
+
+::-webkit-scrollbar-button:vertical:end:increment {
+    background: var(--card-color);
+    border-radius: 0 0 7.5px 7.5px;
+    border: 1px solid var(--border2-color);
+    height: 15px;
+    width: 15px;
+}
+
+::-webkit-scrollbar-button:vertical:end:increment:hover {
+    background: var(--hover-recipe-card-color);
+}
+::-webkit-scrollbar-button:horizontal:start:decrement {
+    background: var(--card-color);
+    border: 1px solid var(--border2-color);
+    border-radius: 7.5px 0 0 7.5px;
+    height: 15px;
+    width: 15px;
+}
+
+::-webkit-scrollbar-button:horizontal:start:decrement:hover {
+    background: var(--hover-recipe-card-color);
+}
+
+::-webkit-scrollbar-button:horizontal:end:increment {
+    background: var(--card-color);
+    border-radius: 0 7.5px 7.5px 0;
+    border: 1px solid var(--border2-color);
+    height: 15px;
+    width: 15px;
+}
+
+::-webkit-scrollbar-button:horizontal:end:increment:hover {
+    background: var(--hover-recipe-card-color);
+}
+
+::-webkit-scrollbar-track {
+    background: var(--card-color);
+    box-shadow: inset 0px 0 2px 0.5px var(--nav-link-hover-shadow);
+    border: 1px solid var(--border2-color);
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    background: var(--card-color);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    border-radius: 5px;
+    background: var(--hover-recipe-card-color);
+    box-shadow: inset 0px 0 5px 0.5px var(--nav-link-hover-shadow);
+}
+
+::-webkit-scrollbar-corner {
+    display: none;
 }
