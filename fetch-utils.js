@@ -5,7 +5,7 @@
 // EDAMAM API CALLS
 
 const APP_ID = "e850f419";
-const APP_KEY = "674d07700faee2184d3902c1de51433c";
+const APP_KEY = "674d07700faee2184d3902c1de51433c"; // old
 // OLD const baseURL = `https://api.edamam.com/search?q=${recipe}&app_id=${APP_ID}&app_key=${APP_KEY}&random=true`;
 // const baseURL = `https://api.edamam.com/api/recipes/v2?type=public&q=${recipe}&app_id=${APP_ID}&app_key=${APP_KEY}`;
 
